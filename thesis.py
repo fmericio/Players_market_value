@@ -112,7 +112,8 @@ import matplotlib.pyplot as plt
 print(clf.score(X=X_test, y=y_test))
 plt.plot(licz[5:],accu[5:], loss[5:])
 
-clf = MLPRegressor(hidden_layer_sizes=(40,100), learning_rate_init=0.003, random_state=1, max_iter=1000, warm_start=True)
+#2 hidden layer model
+clf = MLPRegressor(hidden_layer_sizes=(40,100), learning_rate_init=0.001, random_state=1, max_iter=1000, warm_start=True)
 licz=[]
 accu=[]
 loss=[]
@@ -140,7 +141,8 @@ pred = clf.predict(X_test)
 
 r2_score(y_test, pred)
 
-clf = MLPRegressor(hidden_layer_sizes=(40, 100, 100, 60), learning_rate_init=0.003, random_state=1, max_iter=1000, warm_start=True)
+#4 hidden layer model
+clf = MLPRegressor(hidden_layer_sizes=(40, 100, 100, 60), learning_rate_init=0.001, random_state=1, max_iter=1000, warm_start=True)
 licz=[]
 accu=[]
 loss=[]
