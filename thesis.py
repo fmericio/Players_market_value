@@ -28,7 +28,19 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error
 
 #code retreived from: https://github.com/ajeya-bhat/Data-Analytics/blob/master/code/Neural_Network.py
-#This function automatically preprocess the data, preparing it for the model training 
+#These functions automatically preprocess the data, preparing it for the model training 
+
+def combined_position(x):
+    #Combining the similar Position Players under a single name for simplicity
+    if x in ['ST','LW','RW','CF','RF','LF','RS','LS']: #All the forward positions.
+        return 'Forward'
+    elif x in ['CM','LM','LDM','RM','CDM','CAM','RDM','LAM','RAM','LCM','RCM']: #All midfield positions.
+        return 'Midfielder'
+    elif x in ['LCB','RCB','LWB','RWB','LB','CB','RB']: # All defending positions
+        return 'Defender'
+    elif x in ['GK']: #All goalkeepers
+        return 'GoalKeeper'
+    
 def preprocessing(data):
 
     
